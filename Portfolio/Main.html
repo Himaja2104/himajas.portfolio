@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himaja's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/PLOGO2.png">
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="Main.html"><img src="images/logo.png" alt="Logo"></a>
+        <div>
+            <a href="#">About</a>
+            <a href="https://www.linkedin.com/in/your-linkedin-profile">LinkedIn</a>
+        </div>
+    </nav>
+
+    <!-- Intro Section -->
+    <section class="intro">
+        <h1>Hi, I'm Himaja!</h1>
+        <p>I’m a UX/UI designer passionate about creating user-centric applications with a focus on functionality and aesthetic appeal. My background in BBA IT sparked my interest in intuitive interface design, where I aim to merge usability with visual appeal to enhance user experience.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <a href="project1.html" class="project-link">
+        <div class="project">
+            <img src="images/P-Cover.jpg" alt="Project 1">
+            <div class="project-description">
+                <h2>Musehub</h2>
+                <p>UX/UI Design of an e - commerce application for music enthusiasts</p>
+            </div>
+        </div>
+    </a>
+    <br><br><br><br>
+    <a href="project2.html" class="project-link">
+        <div class="project">
+            <img src="images/Hiberzone.png" alt="Project 2">
+            <div class="project-description">
+                <h2>HiberZone</h2>
+                <p>UX/UI Design of a mental health platform with personalized support.</p>
+            </div>
+        </div>
+    </a>
+
+
+        <!-- Add more projects as needed -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Himaja Cherukupally. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const intro = document.querySelector('.intro');
+        const projectImages = document.querySelectorAll('.project img');
+    
+        function checkVisibility() {
+            const viewportHeight = window.innerHeight;
+    
+            // Check if intro section is in view
+            if (intro.getBoundingClientRect().top < viewportHeight) {
+                intro.classList.add('visible');
+            }
+    
+            // Check if project images are in view
+            projectImages.forEach(image => {
+                const rect = image.getBoundingClientRect();
+                if (rect.top < viewportHeight && rect.bottom > 0) {
+                    image.classList.add('visible');
+                }
+            });
+        }
+    
+        // Check visibility on scroll and load
+        window.addEventListener('scroll', checkVisibility);
+        checkVisibility();
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const introSection = document.querySelector('.intro');
+    const h1 = introSection.querySelector('h1');
+    const p = introSection.querySelector('p');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                introSection.classList.add('visible');
+                h1.classList.add('visible');
+                p.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(introSection);
+});
+
+    </script>
+    
