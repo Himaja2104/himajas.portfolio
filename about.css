@@ -1,3 +1,5 @@
+/* Base styles remain unchanged */
+
 body {
     background-color: #000000;
     overflow-x: hidden;
@@ -184,3 +186,81 @@ hr {
     }
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+    .content-container {
+        flex-direction: column; /* Stack content and image vertically */
+        text-align: center; /* Center text */
+        margin: 100px auto 0; /* Adjust top margin */
+    }
+
+    .centered-content {
+        width: 80%; /* Adjust width for smaller screens */
+        padding: 20px; /* Adjust padding */
+    }
+
+    .about-image {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .navbar a {
+        margin-left: 10px; /* Reduce margin */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center; /* Center items */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .navbar a {
+        margin-left: 0; /* Remove margin */
+        margin-bottom: 10px; /* Add margin between items */
+    }
+
+    .content-container {
+        padding: 10px; /* Reduce padding */
+        margin: 80px auto 0; /* Adjust top margin */
+    }
+
+    .centered-content {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .about-image {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 5px; /* Reduce padding */
+    }
+
+    .navbar a {
+        font-size: 0.9em; /* Reduce font size */
+        margin-bottom: 5px; /* Add margin between items */
+    }
+
+    .content-container {
+        padding: 5px; /* Reduce padding */
+        margin: 60px auto 0; /* Adjust top margin */
+    }
+
+    .centered-content {
+        width: 95%; /* Adjust width for very small screens */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .about-image {
+        height: 200px; /* Adjust height for very small screens */
+    }
+
+    .button {
+        font-size: 1em; /* Reduce font size */
+        padding: 10px 20px; /* Reduce padding */
+    }
+}
