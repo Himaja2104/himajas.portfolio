@@ -1,0 +1,186 @@
+body {
+    background-color: #000000;
+    overflow-x: hidden;
+}
+
+/* Navbar Animation */
+@keyframes drop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: none;
+    color: #ffffff;
+    box-sizing: border-box; /* Ensure padding does not affect width */
+    transition: top 0.3s; /* Smooth hide/show transition */
+    font-family: Arial, Helvetica, sans-serif;
+    animation: drop 1s ease-out; /* Apply drop animation */
+}
+
+.navbar img {
+    height: 70px;
+    width: auto; 
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px; /* Reduced margin */
+}
+
+/* Container for content and image */
+.content-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between content and image */
+    padding: 20px; /* Padding around the container */
+    max-width: 1100px; /* Limit the width of the container */
+    margin: 150px auto 0; /* Adjust top margin to move content down and add space above */
+}
+
+/* Centering the content horizontally and vertically */
+.centered-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+    width: 60%; /* Adjust width as needed */
+    text-align: left; /* Align text to the left */
+    padding: 40px; /* Add some padding around the content */
+    box-sizing: border-box; /* Include padding in height calculation */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5; /* Adjust line height for better readability */
+    opacity: 0; /* Start with hidden content */
+    transform: translateX(20px); /* Start slightly below */
+    animation: fadeInUp 1s forwards; /* Apply animation */
+}
+
+/* Animation for content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* Style for the horizontal rule */
+hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 20px 0; /* Reduce space around the horizontal rule */
+    width: 100%;
+}
+
+/* Styling the paragraphs */
+.centered-content p {
+    font-size: 1.2em; /* Adjust font size */
+    margin: 10px 0; /* Add some space between paragraphs */
+    padding: 10px; /* Add padding inside the paragraph */
+    border-radius: 10px; /* Optional rounded corners */
+    line-height: 2;
+    color: #ffffff;
+    opacity: 0; /* Start with hidden text */
+    transform: translateX(20px); /* Start slightly below */
+    animation: fadeInUp 1s forwards; /* Apply animation */
+    animation-delay: 0.3s; /* Delay for paragraphs */
+}
+
+/* Styling the heading */
+.centered-content h1 {
+    font-weight: 100;
+    font-size: 2.5em; /* Adjust font size */
+    margin: 0; /* Remove default margin */
+    padding: 10px 0; /* Add padding to the heading */
+    border-radius: 10px; /* Optional rounded corners */
+    color: #ffffff;
+    opacity: 0; /* Start with hidden heading */
+    transform: translateX(20px); /* Start slightly below */
+    animation: fadeInUp 3s forwards; /* Apply animation */
+    animation-delay: 0s; /* No delay for heading */
+}
+
+/* Styling the about image */
+.about-image {
+    width: auto; /* Adjust width as needed */
+    height: 400px; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional rounded corners */
+    opacity: 0; /* Start with hidden image */
+    transform: scale(0.95); /* Start slightly smaller for smoother effect */
+    animation: fadeInScale 1.5s ease-out forwards; /* Apply animation with ease-out for smoothness */
+    animation-delay: 1.5s; /* Delay for image */
+}
+
+/* Animation for the image */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95); /* Slightly smaller scale */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); /* Full size */
+    }
+}
+
+
+/* Button Container */
+.button-container {
+    position: relative; /* Ensure proper positioning */
+    left: 50%; /* Center horizontally relative to the content */
+    transform: translateX(-50%); /* Center horizontally */
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    width: auto; /* Adjust width to fit content */
+    margin-bottom: 20px; /* Add space below the button if needed */
+}
+
+/* Button Styling */
+.button {
+    padding: 15px 30px; /* Increase padding inside the button */
+    font-size: 1.2em; /* Increase font size */
+    color: #000000; /* Black text color */
+    background-color: #ffffff; /* White background color */
+    border: 2px solid #000000; /* Black border */
+    border-radius: 12px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    text-align: center; /* Center text inside button */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    opacity: 0; /* Start with hidden button */
+    transform: translateY(20px); /* Start below the original position */
+    animation: fade 1s ease-out forwards; /* Apply animation */
+    animation-delay: 2s; /* Delay for button appearance */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Animation for the button */
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start below the original position */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at the original position */
+    }
+}
+
